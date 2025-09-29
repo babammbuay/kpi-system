@@ -33,7 +33,7 @@ mongoose
 // Middleware
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://kpi-system-zrc5.onrender.com",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
