@@ -10,7 +10,7 @@ export default function UserdetailModal({ show, onHide, user }) {
     if (user?._id) {
       if (user.role === "admin") {
         axios
-          .get(`https://kpi-isstest.onrender.com/api/admin/created-by/${user._id}`, {
+          .get(`https://kpi-system-api.onrender.com/api/admin/created-by/${user._id}`, {
             withCredentials: true,
           })
           .then((res) => setCreatedKpis(res.data))
@@ -19,7 +19,7 @@ export default function UserdetailModal({ show, onHide, user }) {
 
       // ดึง KPI ที่ user ถูก assign
       axios
-        .get(`https://kpi-isstest.onrender.com/api/admin/assigned-to/${user._id}`, {
+        .get(`https://kpi-system-api.onrender.com/api/admin/assigned-to/${user._id}`, {
           withCredentials: true,
         })
         .then((res) => setAssignedKpis(res.data))

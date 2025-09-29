@@ -49,7 +49,7 @@ function Register() {
 
     try {
       const { data } = await axios.post(
-        "https://kpi-isstest.onrender.com/register",
+        "https://kpi-system-api.onrender.com/register",
         { ...values, password: values.password },
         { withCredentials: true }
       );

@@ -30,7 +30,7 @@ export default function AddKpiModal({ show, onHide, refreshKPIs }) {
   const fetchUsers = async () => {
     try {
       const { data } = await axios.get(
-        "https://kpi-isstest.onrender.com/api/admin/users",
+        "https://kpi-system-api.onrender.com/api/admin/users",
         { withCredentials: true }
       );
       console.log("Fetched users:", data);
@@ -82,7 +82,7 @@ export default function AddKpiModal({ show, onHide, refreshKPIs }) {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "https://kpi-isstest.onrender.com/api/admin/createKpi",
+        "https://kpi-system-api.onrender.com/api/admin/createKpi",
         {
           title,
           description,
@@ -97,7 +97,7 @@ export default function AddKpiModal({ show, onHide, refreshKPIs }) {
 
       // ส่ง notification ไปยังผู้ใช้แต่ละคน
       //   await axios.post(
-      //     "https://kpi-isstest.onrender.com/api/admin/notify",
+      //     "https://kpi-system-api.onrender.com/api/admin/notify",
       //     { kpiId: data._id, userIds: assignedUsers },
       //     { withCredentials: true }
       //   );
