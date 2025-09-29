@@ -3,7 +3,7 @@ import KPI from "../models/kpi.js";
 import KPIUpdate from "../models/kpiUpdate.js";
 import bcrypt from "bcryptjs";
 import Notification from "../models/notification.js";
-import nodemailer from "nodemailer";
+
 
 export const createKpi = async (req, res) => {
   try {

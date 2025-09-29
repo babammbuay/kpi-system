@@ -4,8 +4,10 @@ import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import cron from "node-cron";
-import { generateUserNotifications, dailyKpiSummaryForAdmin } from "./controllers/notiController.js";
-
+import {
+  generateUserNotifications,
+  dailyKpiSummaryForAdmin,
+} from "./controllers/notiController.js";
 
 import authRoutes from "./routes/authRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
@@ -32,10 +34,14 @@ mongoose
 app.use(
   cors({
     origin: "http://localhost:5173",
-    methods: ["GET","POST","PUT","DELETE","OPTIONS"],
-    credentials: true
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
   })
 );
+
+app.get("/", (req, res) => {
+  res.send("Server is running!");
+});
 
 app.use(cookieParser());
 app.use(express.json());
@@ -51,7 +57,6 @@ app.use("/notificate", notificationRoutes);
 app.listen(PORT, () => {
   console.log(`Server Started Successfully on PORT ${PORT}`);
 });
-
 
 // ทุกชั่วโมง → ตรวจ KPI user
 cron.schedule("0 * * * *", async () => {
