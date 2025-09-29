@@ -44,7 +44,7 @@ export default function UserEditModal({ show, onHide, user, onSave }) {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/admin/users/${user._id}/update`,
+        `https://kpi-isstest.onrender.com/api/admin/users/${user._id}/update`,
         { username, email, role },
         { withCredentials: true }
       );

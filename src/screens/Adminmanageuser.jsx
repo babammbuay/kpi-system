@@ -51,7 +51,7 @@ export default function Adminmanageuser() {
     const verifyUser = async () => {
       try {
         const { data } = await axios.post(
-          "http://localhost:5000/",
+          "https://kpi-isstest.onrender.com/",
           {},
           { withCredentials: true }
         );
@@ -73,7 +73,7 @@ export default function Adminmanageuser() {
   const fetchUsers = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/admin/users",
+        "https://kpi-isstest.onrender.com/api/admin/users",
         { withCredentials: true }
       );
       setUsersList(data);
@@ -91,7 +91,7 @@ export default function Adminmanageuser() {
   const fetchNotifications = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/notificate/user",
+        "https://kpi-isstest.onrender.com/notificate/user",
         {
           withCredentials: true,
         }
@@ -117,7 +117,7 @@ export default function Adminmanageuser() {
   const markAsRead = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/notificate/read/${id}`,
+        `https://kpi-isstest.onrender.com/notificate/read/${id}`,
         {},
         { withCredentials: true }
       );
@@ -158,7 +158,7 @@ export default function Adminmanageuser() {
   const handleDelete = async (id) => {
     if (!window.confirm("Confirm To Delete User?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/admin/users/${id}`, {
+      await axios.delete(`https://kpi-isstest.onrender.com/api/admin/users/${id}`, {
         withCredentials: true,
       });
       toast.success("User deleted successfully!");

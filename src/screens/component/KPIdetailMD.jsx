@@ -9,7 +9,7 @@ export default function KPIdetailMD({ show, onHide, kpi }) {
     if (kpi?._id) {
       // ดึง history ของ KPI
       axios
-        .get(`http://localhost:5000/api/admin/kpis/${kpi._id}/history`, {
+        .get(`https://kpi-isstest.onrender.com/api/admin/kpis/${kpi._id}/history`, {
           withCredentials: true,
         })
         .then((res) => setHistory(res.data))

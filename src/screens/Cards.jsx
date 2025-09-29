@@ -9,7 +9,7 @@ export default function Cards({ children }) {
   useEffect(() => {
     const verifyUser = async () => {
       try {
-        const { data } = await axios.post("http://localhost:5000/", {}, { withCredentials: true });
+        const { data } = await axios.post("https://kpi-isstest.onrender.com/", {}, { withCredentials: true });
         if (data.status) {
           setUser(data.user); // จะมี role และ info ของผู้ใช้
         }

@@ -40,7 +40,7 @@ export default function AddUserModal({ show, onHide, refreshUsers }) {
     setLoading(true);
     try {
       await axios.post(
-        "http://localhost:5000/api/admin/create",
+        "https://kpi-isstest.onrender.com/api/admin/create",
         { username, email, password, role },
         { withCredentials: true }
       );

@@ -64,7 +64,7 @@ export default function AdminDashboard() {
     const verifyUser = async () => {
       try {
         const { data } = await axios.post(
-          "http://localhost:5000/",
+          "https://kpi-isstest.onrender.com/",
           {},
           { withCredentials: true }
         );
@@ -89,7 +89,7 @@ export default function AdminDashboard() {
   const fetchNotifications = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/notificate/user",
+        "https://kpi-isstest.onrender.com/notificate/user",
         {
           withCredentials: true,
         }
@@ -115,7 +115,7 @@ export default function AdminDashboard() {
   const markAsRead = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/notificate/read/${id}`,
+        `https://kpi-isstest.onrender.com/notificate/read/${id}`,
         {},
         { withCredentials: true }
       );
@@ -217,7 +217,7 @@ export default function AdminDashboard() {
   const fetchKPIs = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/admin/getKpis",
+        "https://kpi-isstest.onrender.com/api/admin/getKpis",
         { withCredentials: true }
       );
       setKpis(data);
@@ -253,7 +253,7 @@ export default function AdminDashboard() {
   const fetchDashboardData = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/admin/admin-dashboard?period=${filterPeriod}`,
+        `https://kpi-isstest.onrender.com/api/admin/admin-dashboard?period=${filterPeriod}`,
         { withCredentials: true }
       );
 

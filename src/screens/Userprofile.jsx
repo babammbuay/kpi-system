@@ -41,7 +41,7 @@ export default function Userprofile() {
     const verifyUser = async () => {
       try {
         const { data } = await axios.post(
-          "http://localhost:5000/",
+          "https://kpi-isstest.onrender.com/",
           {},
           { withCredentials: true }
         );
@@ -63,7 +63,7 @@ export default function Userprofile() {
   const fetchNotifications = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/notificate/user",
+        "https://kpi-isstest.onrender.com/notificate/user",
         {
           withCredentials: true,
         }
@@ -89,7 +89,7 @@ export default function Userprofile() {
   const markAsRead = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/notificate/read/${id}`,
+        `https://kpi-isstest.onrender.com/notificate/read/${id}`,
         {},
         { withCredentials: true }
       );
@@ -143,7 +143,7 @@ export default function Userprofile() {
   const handleSave = async () => {
     try {
       const { data } = await axios.put(
-        `http://localhost:5000/profile/${user._id}`,
+        `https://kpi-isstest.onrender.com/profile/${user._id}`,
         {
           username: user.username,
           email: user.email,
@@ -572,7 +572,7 @@ export default function Userprofile() {
 
                   try {
                     const { data } = await axios.put(
-                      "http://localhost:5000/change-password",
+                      "https://kpi-isstest.onrender.com/change-password",
                       { newPassword, confirmPassword }, // ส่งรหัสใหม่
                       { withCredentials: true }
                     );
@@ -660,7 +660,7 @@ export default function Userprofile() {
                 onClick={async () => {
                   try {
                     const { data } = await axios.delete(
-                      "http://localhost:5000/delete-account",
+                      "https://kpi-isstest.onrender.com/delete-account",
                       {
                         data: { password: deletePassword },
                         withCredentials: true,

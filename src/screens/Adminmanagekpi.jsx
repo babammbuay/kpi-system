@@ -53,7 +53,7 @@ export default function Adminmanagekpi() {
     const verifyUser = async () => {
       try {
         const { data } = await axios.post(
-          "http://localhost:5000/",
+          "https://kpi-isstest.onrender.com/",
           {},
           { withCredentials: true }
         );
@@ -76,7 +76,7 @@ export default function Adminmanagekpi() {
   const fetchNotifications = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/notificate/user",
+        "https://kpi-isstest.onrender.com/notificate/user",
         {
           withCredentials: true,
         }
@@ -102,7 +102,7 @@ export default function Adminmanagekpi() {
   const markAsRead = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/notificate/read/${id}`,
+        `https://kpi-isstest.onrender.com/notificate/read/${id}`,
         {},
         { withCredentials: true }
       );
@@ -143,7 +143,7 @@ export default function Adminmanagekpi() {
   const fetchKPIs = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/admin/getKpis",
+        "https://kpi-isstest.onrender.com/api/admin/getKpis",
         { withCredentials: true }
       );
       setKpis(data);
@@ -160,7 +160,7 @@ export default function Adminmanagekpi() {
   const handleDelete = async (id) => {
     if (!window.confirm("Confirm To Delete KPI?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/admin/kpis/${id}`, {
+      await axios.delete(`https://kpi-isstest.onrender.com/api/admin/kpis/${id}`, {
         withCredentials: true,
       });
       toast.success("Deleted Success!");

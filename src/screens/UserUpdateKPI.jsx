@@ -7,20 +7,9 @@ import {
   FaBell,
   FaTachometerAlt,
   FaBullseye,
-  FaUsers,
   FaCog,
   FaSignOutAlt,
-  FaPlus,
-  FaEye,
-  FaEdit,
-  FaTrash,
-  FaChevronLeft,
-  FaChevronRight,
 } from "react-icons/fa";
-
-import KPIdetailMD from "./component/KPIdetailMD";
-import AdminKPIEditMD from "./component/AdminKPIEditMD";
-import AddKpiModal from "./component/AddKpiModal";
 
 export default function UserUpdateKPI() {
   const location = useLocation();
@@ -29,15 +18,6 @@ export default function UserUpdateKPI() {
   const [user, setUser] = useState(null);
 
   const [kpis, setKpis] = useState([]);
-  const [search, setSearch] = useState("");
-  const [roleFilter, setRoleFilter] = useState("");
-  const [statusFilter, setStatusFilter] = useState("");
-  const [taskStatusFilter, setTaskStatusFilter] = useState("");
-
-  const [showAddModal, setShowAddModal] = useState(false);
-  const [selectedKpi, setSelectedKpi] = useState(null);
-  const [showDetailModal, setShowDetailModal] = useState(false);
-  const [showEditModal, setShowEditModal] = useState(false);
 
   const [activeTab, setActiveTab] = useState("kpi");
   const [hoveredTab, setHoveredTab] = useState(null);
@@ -57,7 +37,7 @@ export default function UserUpdateKPI() {
     const verifyUser = async () => {
       try {
         const { data } = await axios.post(
-          "http://localhost:5000/",
+          "https://kpi-isstest.onrender.com/",
           {},
           { withCredentials: true }
         );
@@ -80,7 +60,7 @@ export default function UserUpdateKPI() {
   const fetchNotifications = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/notificate/user",
+        "https://kpi-isstest.onrender.com/notificate/user",
         {
           withCredentials: true,
         }
@@ -106,7 +86,7 @@ export default function UserUpdateKPI() {
   const markAsRead = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/notificate/read/${id}`,
+        `https://kpi-isstest.onrender.com/notificate/read/${id}`,
         {},
         { withCredentials: true }
       );
@@ -154,7 +134,7 @@ export default function UserUpdateKPI() {
 
   const fetchKPIs = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/user/kpis", {
+      const { data } = await axios.get("https://kpi-isstest.onrender.com/user/kpis", {
         withCredentials: true,
       });
       setKpis(data);
@@ -191,7 +171,7 @@ export default function UserUpdateKPI() {
 
       // ส่งไป backend
       await axios.post(
-        "http://localhost:5000/user/kpi/update",
+        "https://kpi-isstest.onrender.com/user/kpi/update",
         {
           kpi_id: kpi._id,
           status_task: updatedTaskStatus,

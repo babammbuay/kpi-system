@@ -34,7 +34,7 @@ export default function AdminKPIEditMD({ show, onHide, kpi, onSave }) {
   const fetchUsers = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/admin/users",
+        "https://kpi-isstest.onrender.com/api/admin/users",
         { withCredentials: true }
       );
       if (Array.isArray(data)) {
@@ -75,7 +75,7 @@ export default function AdminKPIEditMD({ show, onHide, kpi, onSave }) {
   const handleSave = async () => {
     try {
       await axios.put(
-        `http://localhost:5000/api/admin/kpis/${kpi._id}/update`,
+        `https://kpi-isstest.onrender.com/api/admin/kpis/${kpi._id}/update`,
         {
           title,
           description,

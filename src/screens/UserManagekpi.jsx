@@ -54,7 +54,7 @@ export default function UserManagekpi() {
     const verifyUser = async () => {
       try {
         const { data } = await axios.post(
-          "http://localhost:5000/",
+          "https://kpi-isstest.onrender.com/",
           {},
           { withCredentials: true }
         );
@@ -77,7 +77,7 @@ export default function UserManagekpi() {
   const fetchNotifications = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/notificate/user",
+        "https://kpi-isstest.onrender.com/notificate/user",
         {
           withCredentials: true,
         }
@@ -103,7 +103,7 @@ export default function UserManagekpi() {
   const markAsRead = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/notificate/read/${id}`,
+        `https://kpi-isstest.onrender.com/notificate/read/${id}`,
         {},
         { withCredentials: true }
       );
@@ -151,7 +151,7 @@ export default function UserManagekpi() {
 
   const fetchKPIs = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/user/kpis", {
+      const { data } = await axios.get("https://kpi-isstest.onrender.com/user/kpis", {
         withCredentials: true,
       });
       setKpis(data);
