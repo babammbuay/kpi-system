@@ -1,20 +1,66 @@
-# React + Vite
+# KPI System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a **KPI management system** built with **React** and **Vite**, using **MongoDB Atlas** as the database. It allows you to manage KPIs, users, and reports.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-## React Compiler
+- [Setup Instructions](#setup-instructions)
+- [MongoDB Atlas Setup](#mongodb-atlas-setup)
+- [Running the Project](#running-the-project)
+- [API Documentation](#api-documentation)
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+## Setup Instructions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# kpi-issTest" 
-"# kpi-system" 
-"# kpi-system" 
-"# kpi-system" 
+1. **Clone the repository**:
+
+git clone https://github.com/babammbuay/kpi-system.git
+cd kpi-system
+
+2. **Install dependencies**:
+
+npm install
+
+3. **Create a .env file in the sever directory and add your MongoDB Atlas connection string**:
+
+MONGO_URI="your_mongodb_atlas_connection_string"
+PORT=5000
+JWT_SECRET= your_JWT_SECRET
+
+Replace your_mongodb_atlas_connection_string with the URI from MongoDB Atlas (see below).
+
+## MongoDB Atlas Setup
+Go to MongoDB Atlas https://www.mongodb.com/products/platform/atlas-database and create a free account.
+
+Create a new cluster (Free Tier is enough for testing).
+
+Create a database user with a username and password.
+
+Get your connection string from the Connect button in Atlas.
+
+Replace <username>, <password>, and <dbname> in the URI:
+
+mongodb+srv://<username>:<password>@cluster0.mongodb.net/<dbname>?retryWrites=true&w=majority
+Add this URI to your .env file as MONGO_URI.
+
+## Running the Project
+1. **Start the backend (if backend is in server/ folder)**:
+
+cd server
+npm install
+npm start
+
+2. **Start the frontend**:
+
+cd ..
+npm run dev
+
+3. **Open your browser at**:
+
+http://localhost:5173
+
+## API Documentation
+Base URL: http://localhost:5000 (or your deployed server)
