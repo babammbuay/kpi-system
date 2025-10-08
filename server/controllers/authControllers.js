@@ -42,6 +42,7 @@ const getCookieOptions = () => {
     maxAge: maxAge * 1000,
     sameSite: isProduction ? "None" : "Lax",
     secure: isProduction, // production = true, dev = false
+    domain: ".onrender.com",
   };
 };
 
