@@ -34,17 +34,15 @@ const handleErrors = (err) => {
   return errors;
 };
 
-// 🔑 ฟังก์ชันช่วยเลือกค่า cookie options (dev / production)
 const getCookieOptions = () => {
-  const isProduction = process.env.NODE_ENV === "production";
   return {
     httpOnly: true,
-    maxAge: maxAge * 1000,
-    sameSite: isProduction ? "None" : "Lax",
-    secure: isProduction, // production = true, dev = false
-    domain: ".onrender.com",
+    maxAge: 3 * 24 * 60 * 60 * 1000, // 3 วัน
+    sameSite: "None",   
+    secure: true,       
   };
 };
+
 
 export const register = async (req, res) => {
   try {
