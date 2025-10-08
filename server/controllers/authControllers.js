@@ -37,9 +37,10 @@ const handleErrors = (err) => {
 const getCookieOptions = () => {
   return {
     httpOnly: true,
-    maxAge: 3 * 24 * 60 * 60 * 1000, // 3 วัน
-    sameSite: "None",   
-    secure: true,       
+    maxAge: maxAge * 1000,
+    sameSite: "None",  // cross-site
+    secure: true,      // HTTPS จำเป็น
+    domain: ".onrender.com", // ให้ครอบคลุม front-end และ API
   };
 };
 
