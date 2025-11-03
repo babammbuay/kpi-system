@@ -38,15 +38,13 @@ const handleErrors = (err) => {
 const getCookieOptions = () => {
   const isProduction = process.env.NODE_ENV === "production";
   return {
-    httpOnly: true,
-    maxAge: maxAge * 1000,
-    sameSite: isProduction ? "None" : "Lax",
-    secure: isProduction, // production = true, dev = false
-    maxAge: 3 * 24 * 60 * 60 * 1000, // 3 วัน
-    sameSite: "None",   
-    secure: true,       
+    httpOnly: true,                              // ปลอดภัย
+    maxAge: 3 * 24 * 60 * 60 * 1000,             // 3 วัน
+    sameSite: isProduction ? "None" : "Lax",     // None = cross-site (Render), Lax = dev
+    secure: isProduction,                        // ใช้ true เฉพาะตอน production (HTTPS)
   };
 };
+
 
 
 export const register = async (req, res) => {
