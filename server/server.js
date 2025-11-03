@@ -33,11 +33,11 @@ mongoose
 // Middleware
 app.use(
   cors({
-    origin: "https://kpi-system-zrc5.onrender.com",
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    origin: "https://kpi-system-frontend.onrender.com",
     credentials: true,
   })
 );
+
 
 
 app.use(cookieParser());
